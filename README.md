@@ -1,7 +1,7 @@
 README
 ======
 
-This project provides a working example project of a modified TTSplitViewController controller, which is a part of the Three20 framework. I found the standard TTSplitViewController a little buggy and I have made some changes to it. Might be included in the official Three20 framework in the future. 
+This project provides a working example project of a modified TTSplitViewController controller, which is a part of the Three20 framework. I found the standard TTSplitViewController a little buggy and I have made some changes to it. I hope ro improve it so it can be included in the official Three20 framework in the future. 
 
 Notes
 -----
