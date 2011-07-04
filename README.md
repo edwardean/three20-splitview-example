@@ -7,8 +7,9 @@ Notes
 -----
 - This project requires the release branch from my three20 fork (https://github.com/aporat/three20/tree/release). This branch includes changes to the TTSplitViewController and additions to UICommon classes. The project won't compile with the standard three20 repo. 
 - This project is universal app. The TTSplitViewController is displayed only for ipad, while the app works normally on iphone devices.
-- The TTSplitViewController allows you to have a primary controller, which is the navigator for the details controller.
-- Orientation changes are fully supported and the example project behaves like the standard UISplitViewController
+- The TTSplitViewController allows you to have a primary controller (left controller), which is the navigator for the details controller (right controller).
+- Orientation changes are fully supported 
+- The TTSplitViewController emulate the behavior of the standard UISplitViewController
 - The code provides without any warranty
 
   
