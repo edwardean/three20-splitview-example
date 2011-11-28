@@ -1,9 +1,9 @@
 //
-//  HolidayViewController.m
+//  DetailsViewController.m
 //  SplitView
 //
-//  Created by Hadar Porat on 12/12/10.
-//  Copyright 2010 Hadar Porat. All rights reserved.
+//  Created by Adar Porat on 3/27/11.
+//  Copyright 2011 Kosher Penguin LLC. All rights reserved.
 //
 
 #import "DetailsViewController.h"
@@ -33,26 +33,49 @@
 }
 
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated]; 
+- (void)setItem:(NSString*)item {
+  self.title = item;
   
-  if (TTIsPad() && TTDeviceOrientationIsLandscape()) {
-    [self.navigationItem setLeftBarButtonItem:nil animated:NO];
-  } else if (TTIsPad()) {
-    TTSplitViewController* controller =
-    (TTSplitViewController*)[[TTNavigator navigator] viewControllerForURL:@"tt://primary"];
-    [self.navigationItem setLeftBarButtonItem:controller.rootPopoverSplitButtonItem animated:NO];
+  if ([item isEqualToString:@"item1"]) {
+    self.view.backgroundColor = [UIColor redColor];
+  } else {
+    self.view.backgroundColor = [UIColor blueColor];
   }
-  
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
-#pragma mark TTModel
+#pragma mark Split view support
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)splitViewController:(MGSplitViewController*)svc 
+     willHideViewController:(UIViewController *)aViewController 
+          withBarButtonItem:(UIBarButtonItem*)barButtonItem 
+       forPopoverController: (UIPopoverController*)pc {
+	
+	if (barButtonItem) {
+    barButtonItem.title = @"Master";
+		self.navigationItem.leftBarButtonItem = barButtonItem;
+	}
+  popoverController = pc;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)splitViewController:(MGSplitViewController*)svc 
+     willShowViewController:(UIViewController *)aViewController 
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+	
+	if (barButtonItem) {
+		self.navigationItem.leftBarButtonItem = nil;
+	}
+  
+  popoverController = nil;
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

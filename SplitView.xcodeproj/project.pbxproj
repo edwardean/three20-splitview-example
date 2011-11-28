@@ -16,6 +16,9 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		6D84E296147FE24700617C2B /* MGSplitCornersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84E291147FE24700617C2B /* MGSplitCornersView.m */; };
+		6D84E297147FE24700617C2B /* MGSplitDividerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84E293147FE24700617C2B /* MGSplitDividerView.m */; };
+		6D84E298147FE24700617C2B /* MGSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84E295147FE24700617C2B /* MGSplitViewController.m */; };
 		6DF6A93813C166DE003AF344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF6A93713C166DE003AF344 /* UIKit.framework */; };
 		6DF6A93A13C166DE003AF344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF6A93913C166DE003AF344 /* Foundation.framework */; };
 		6DF6A93C13C166DE003AF344 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF6A93B13C166DE003AF344 /* CoreGraphics.framework */; };
@@ -23,7 +26,7 @@
 		6DF6A94513C166DE003AF344 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6A94413C166DE003AF344 /* main.m */; };
 		6DF6A94813C166DE003AF344 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6A94713C166DE003AF344 /* AppDelegate.m */; };
 		6DF6A99F13C167A3003AF344 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6A99E13C167A3003AF344 /* SplitViewController.m */; };
-		6DF6A9A313C1690F003AF344 /* PrimaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6A9A213C1690F003AF344 /* PrimaryViewController.m */; };
+		6DF6A9A313C1690F003AF344 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6A9A213C1690F003AF344 /* MasterViewController.m */; };
 		6DF6A9A613C16956003AF344 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6A9A513C16956003AF344 /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -187,6 +190,12 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		6D84E290147FE24700617C2B /* MGSplitCornersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSplitCornersView.h; path = MGSplitViewController/Classes/MGSplitCornersView.h; sourceTree = SOURCE_ROOT; };
+		6D84E291147FE24700617C2B /* MGSplitCornersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSplitCornersView.m; path = MGSplitViewController/Classes/MGSplitCornersView.m; sourceTree = SOURCE_ROOT; };
+		6D84E292147FE24700617C2B /* MGSplitDividerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSplitDividerView.h; path = MGSplitViewController/Classes/MGSplitDividerView.h; sourceTree = SOURCE_ROOT; };
+		6D84E293147FE24700617C2B /* MGSplitDividerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSplitDividerView.m; path = MGSplitViewController/Classes/MGSplitDividerView.m; sourceTree = SOURCE_ROOT; };
+		6D84E294147FE24700617C2B /* MGSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSplitViewController.h; path = MGSplitViewController/Classes/MGSplitViewController.h; sourceTree = SOURCE_ROOT; };
+		6D84E295147FE24700617C2B /* MGSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSplitViewController.m; path = MGSplitViewController/Classes/MGSplitViewController.m; sourceTree = SOURCE_ROOT; };
 		6DF6A93313C166DE003AF344 /* SplitView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF6A93713C166DE003AF344 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DF6A93913C166DE003AF344 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -199,8 +208,8 @@
 		6DF6A94713C166DE003AF344 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6DF6A99D13C167A3003AF344 /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
 		6DF6A99E13C167A3003AF344 /* SplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
-		6DF6A9A113C1690F003AF344 /* PrimaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimaryViewController.h; sourceTree = "<group>"; };
-		6DF6A9A213C1690F003AF344 /* PrimaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimaryViewController.m; sourceTree = "<group>"; };
+		6DF6A9A113C1690F003AF344 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MasterViewController.h; sourceTree = "<group>"; };
+		6DF6A9A213C1690F003AF344 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		6DF6A9A413C16956003AF344 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		6DF6A9A513C16956003AF344 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,6 +299,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6D84E287147FE19000617C2B /* MGSplitViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D84E290147FE24700617C2B /* MGSplitCornersView.h */,
+				6D84E291147FE24700617C2B /* MGSplitCornersView.m */,
+				6D84E292147FE24700617C2B /* MGSplitDividerView.h */,
+				6D84E293147FE24700617C2B /* MGSplitDividerView.m */,
+				6D84E294147FE24700617C2B /* MGSplitViewController.h */,
+				6D84E295147FE24700617C2B /* MGSplitViewController.m */,
+			);
+			name = MGSplitViewController;
+			sourceTree = "<group>";
+		};
 		6DF6A92813C166DE003AF344 = {
 			isa = PBXGroup;
 			children = (
@@ -328,8 +350,9 @@
 		6DF6A93D13C166DE003AF344 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6DF6A9A113C1690F003AF344 /* PrimaryViewController.h */,
-				6DF6A9A213C1690F003AF344 /* PrimaryViewController.m */,
+				6D84E287147FE19000617C2B /* MGSplitViewController */,
+				6DF6A9A113C1690F003AF344 /* MasterViewController.h */,
+				6DF6A9A213C1690F003AF344 /* MasterViewController.m */,
 				6DF6A9A413C16956003AF344 /* DetailsViewController.h */,
 				6DF6A9A513C16956003AF344 /* DetailsViewController.m */,
 				6DF6A9A013C167A9003AF344 /* Split View */,
@@ -573,8 +596,11 @@
 				6DF6A94513C166DE003AF344 /* main.m in Sources */,
 				6DF6A94813C166DE003AF344 /* AppDelegate.m in Sources */,
 				6DF6A99F13C167A3003AF344 /* SplitViewController.m in Sources */,
-				6DF6A9A313C1690F003AF344 /* PrimaryViewController.m in Sources */,
+				6DF6A9A313C1690F003AF344 /* MasterViewController.m in Sources */,
 				6DF6A9A613C16956003AF344 /* DetailsViewController.m in Sources */,
+				6D84E296147FE24700617C2B /* MGSplitCornersView.m in Sources */,
+				6D84E297147FE24700617C2B /* MGSplitDividerView.m in Sources */,
+				6D84E298147FE24700617C2B /* MGSplitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

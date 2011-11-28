@@ -1,5 +1,5 @@
 //
-//  SplitViewController.h
+//  MasterViewController.h
 //  SplitView
 //
 //  Created by Adar Porat on 3/27/11.
@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MGSplitViewController.h"
 
-@interface SplitViewController : MGSplitViewController
+@interface MasterViewController : TTTableViewController {
+}
 
 @end

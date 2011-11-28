@@ -1,18 +1,19 @@
 //
-//  HolidaysViewController.m
+//  MasterViewController.m
 //  SplitView
 //
-//  Created by Hadar Porat on 9/19/10.
-//  Copyright 2010 Hadar Porat. All rights reserved.
+//  Created by Adar Porat on 3/27/11.
+//  Copyright 2011 Kosher Penguin LLC. All rights reserved.
 //
 
-#import "PrimaryViewController.h"
+#import "MasterViewController.h"
+#import "AppDelegate.h"
+#import "DetailsViewController.h"
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-@implementation PrimaryViewController
+@implementation MasterViewController
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -24,7 +25,9 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-		self.title = @"Navigation";
+		self.title = @"Master";
+    
+    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
   }
   
 	return self;
@@ -33,15 +36,34 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // TTModelViewController
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)createModel {
   self.dataSource = [TTSectionedDataSource dataSourceWithObjects:
                   
                      @"General",
-                     [TTTableTextItem itemWithText:@"Link 1" URL:@"tt://details/item1"],
-                     [TTTableTextItem itemWithText:@"Link 2" URL:@"tt://details/item2"],
+                     [TTTableTextItem itemWithText:@"Link 1" URL:@"link"],
+                     [TTTableTextItem itemWithText:@"Link 2" URL:@"link2"],
+        
+                     
                      nil];
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)didSelectObject:(id)object atIndexPath:(NSIndexPath *)indexPath {
+  AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+
+  TTTableTextItem* item = object;
+  
+  if (TTIsPad()) {
+    [appDelegate.detailsController setItem:item.text];
+  } else {
+    [appDelegate.detailsController setItem:item.text];
+    [appDelegate.masterNavController pushViewController:appDelegate.detailsController animated:YES];
+  }
+  
+  [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 
 

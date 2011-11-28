@@ -1,16 +1,15 @@
 //
-//  SplitViewAppDelegate.m
+//  AppDelegate.m
 //  SplitView
 //
-//  Created by Hadar Porat on 7/3/11.
-//  Copyright 2011 Hadar Porat. All rights reserved.
+//  Created by Adar Porat on 3/27/11.
+//  Copyright 2011 Kosher Penguin LLC. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "Three20/Three20.h"
 
 #import "SplitViewController.h"
-#import "PrimaryViewController.h"
+#import "MasterViewController.h"
 #import "DetailsViewController.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -18,43 +17,49 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation AppDelegate
 
+@synthesize window = _window;
 
-@synthesize detailViewController=_detailViewController;
+@synthesize splitViewController = _splitViewController;
+@synthesize masterNavController = _masterNavController;
+@synthesize detailsNavController = _detailsNavController;
+@synthesize detailsController = _detailsController;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)application:(UIApplication *)application 
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
-  TTNavigator* navigator = [TTNavigator navigator];
-  navigator.persistenceMode = TTNavigatorPersistenceModeTop;
-  
-  TTURLMap* map = navigator.URLMap;
-  
-  [map from:@"*" toViewController:[TTWebController class]];
-  
-  _detailViewController = [[DetailsViewController alloc] init];
-  
+  _window = [[UIWindow alloc] initWithFrame:TTScreenBounds()];
+
   if (TTIsPad()) {
-    [map from: @"tt://primary" toSharedViewController: [SplitViewController class]];
-    TTSplitViewController* controller =
-    (TTSplitViewController*)[[TTNavigator navigator] viewControllerForURL:@"tt://primary"];
+    _splitViewController = [[SplitViewController alloc] initWithNibName:nil bundle:nil];
     
-    map = controller.detailsNavigator.URLMap;
+    TTViewController* controller = [[[MasterViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    _masterNavController = [[TTBaseNavigationController alloc] initWithRootViewController:controller];
+    [_splitViewController setMasterViewController:_masterNavController];
+    
+    _detailsController = [[DetailsViewController alloc] initWithNibName:nil bundle:nil];
+   _detailsNavController = [[TTBaseNavigationController alloc] initWithRootViewController:_detailsController];
+    [_splitViewController setDetailViewController:_detailsNavController];
+
+    _splitViewController.delegate = _detailsController;
+    
+    [_window addSubview:_splitViewController.view];    
   } else {
-    [map from:@"tt://primary" toViewController:[PrimaryViewController class]];
+    _detailsController = [[DetailsViewController alloc] initWithNibName:nil bundle:nil];
+
+    TTViewController* controller = [[[MasterViewController alloc] init] autorelease];
+    _masterNavController = [[TTBaseNavigationController alloc] initWithRootViewController:controller];
+    [_window addSubview:_masterNavController.view];    
   }
   
-	[map from:@"tt://details/(initWithId:)" toViewController:_detailViewController];
-  
-  [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://primary"]];
-
+  [_window makeKeyAndVisible];
   
   return YES;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
-  [_detailViewController release];
+
   [super dealloc];
 }
 

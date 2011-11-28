@@ -1,16 +1,19 @@
 //
-//  HolidayViewController.h
+//  DetailsViewController.h
 //  SplitView
 //
-//  Created by Hadar Porat on 12/12/10.
-//  Copyright 2010 Kosher Penguin LLC. All rights reserved.
+//  Created by Adar Porat on 3/27/11.
+//  Copyright 2011 Kosher Penguin LLC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Three20/Three20.h"
+#import "MGSplitViewController.h"
 
-@interface DetailsViewController : TTViewController {
+@interface DetailsViewController : TTViewController <UIPopoverControllerDelegate, MGSplitViewControllerDelegate> {
+  MGSplitViewController* _splitController;
+  UIPopoverController* popoverController;
 }
 
+- (void)setItem:(NSString*)item;
 
 @end
