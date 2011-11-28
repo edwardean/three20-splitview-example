@@ -1,15 +1,15 @@
 README
 ======
 
-This project provides a working example project of a modified TTSplitViewController controller, which is a part of the Three20 framework. I found the standard TTSplitViewController a little buggy and I have made some changes to it. I hope ro improve it so it can be included in the official Three20 framework in the future. 
+This project provides a working example project using the MGSplitViewController class in a three20 project.
 
 Notes
 -----
-- This project requires the release branch from our three20 fork (https://github.com/kosher-penguin/three20/tree/release). This branch includes changes to the TTSplitViewController and additions to UICommon classes. The project won't compile with the standard three20 repo. 
-- This project is universal app. The TTSplitViewController is displayed only for ipad, while the app works normally on iphone devices.
-- The TTSplitViewController allows you to have a primary controller (left controller), which is the navigator for the details controller (right controller).
+- This project is universal app. The SplitViewController is displayed only for ipad, while the app works normally on iphone devices.
+- The split view doesn't support TTNavigator links (tt://) now. Controllers have to be pushed and poped using the standard ios sdk.
+- The SplitViewController allows you to have a master controller (left controller), which is the navigator for the details controller (right controller).
 - Orientation changes are fully supported 
-- The TTSplitViewController emulate the behavior of the standard UISplitViewController
+- The MGSplitViewController emulates the behavior of the standard UISplitViewController
 - The code provides without any warranty
 
   
